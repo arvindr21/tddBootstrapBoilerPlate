@@ -1,4 +1,4 @@
-LESS Driven Bootstrap Boiler Plate
+A  Boiler Plate for Test Driven Developement using LESS Bootstrap
 ==================================
 
 Impressed by a lot of scaffolding templates, I have come with my own with some custom settings. 
