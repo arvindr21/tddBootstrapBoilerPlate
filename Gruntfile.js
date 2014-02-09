@@ -148,7 +148,7 @@ module.exports = function (grunt) {
             }
         },*/
 		jasmine: {
-			pivotal: {
+			dev: {
 			  src: 'app/scripts/**/*.js',
 			  options: {
 				specs: 'test/spec/*-Spec.js',
