@@ -51,8 +51,8 @@ With dependency management, autoprefixing & file hashing (for browser caching)!
 What all can Grunt do?
 ======================
 Grunt is a very powerful task runner that will do what you say (& do mind your tone.. Grunt is pretty serious). 
-Part 1
-------
+Handling LESS changes
+--------------------
 - Lets say that we are trying to build a custom theme for our application. So lets leverage the power of LESS by defining variables, mixins etc. 
 - Now for fun, lets change the background of the page. We will naviagate to ```boilerplate\tddBootstrapBoilerPlate\bower_components\bootstrap\less```
 - Find a file called `variables.less` and open in your favourite editor. 
@@ -70,8 +70,31 @@ Part 1
 You can play around to get a hang of both grunt and less. 
 Once done press `ctrl + c` to stop the watch.
 
-Part 2
-------
+Running test cases
+------------------
+In a Test Driven Development environment, executing test cases manually again and again is a painful & boring. So lets see how we can leverage Grunt for this.
+
+Our mantra here
+---------------
+Write Test Case --> See the Fail --> Fix it --> See it pass --> Refactor the code to avoid duplicates
+
+- Back to `gitbash`, lets run `grunt jasmine`. Jasmine is our unit testing framework.
+- You will see a few lines roll by and you will see a green tick and 'says hello'. This is a sample test case, that comes out of box with this framework. Neat right? 
+
+Lets make some changes and see what all can we do with Grunt + TDD + Jasmine
+- Back to `gitbash` run `grunt watch`, let grunt watch for our changes and run test cases. 
+- Using file explorer navigate to `boilerplate\tddBootstrapBoilerPlate\test\spec` and open `Test-spec.js` in your favorite editor.
+- For a quick intro, we will replace `expect(helloWorld()).toEqual("Hello world!");` to `expect(helloWorld()).toEqual("Hello Jasmine & Grunt!");` save and file and run back to `gitbash`
+- You will see that grunt has detected changes to our file, and since it is a spec file and not a less file, it ran jasmine to validate our changes. But! our test case failed. 
+- Jasmine says `Expected 'Hello world!' to equal 'Hello Jasmine & Grunt!'. (1)`
+- So how do we fix it? Lets navigate to `boilerplate\tddBootstrapBoilerPlate\app\scripts` and open `main.js`. Ahh! here is our source, which we are testing.
+- Lets change the return statement from `return 'Hello world!';` to `return 'Hello Jasmine & Grunt!';` and save our file. 
+- Grunt will detect the changes and will run all the test cases again and check. Since we have an integration with Karma as well, a couple of browsers will open and all the code will be tested. 
+You can scroll through the logs to see your tests pass.
+
+PS: you can update the grunt.js file as per your need.
+
+And as we already have seen Grunt does our building too! 
 
 What does this package have? 
 ----------------------------
