@@ -40,7 +40,7 @@ module.exports = function (grunt) {
         watch: {
             js: {
                 files: ['<%= baseProject.app %>/scripts/{,*/}*.js'],
-                tasks: ['jshint'],
+                tasks: ['test:watch','jshint'],
                 options: {
                     livereload: true
                 }
