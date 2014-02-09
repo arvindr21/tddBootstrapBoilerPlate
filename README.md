@@ -9,7 +9,7 @@ Table of Contents
 - [Development & Build](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#development--build)
 - [Grunt & Its powers] (https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-all-can-grunt-do)
 - [What all is packed into this framework](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-does-this-package-have-)
-- [Troubleshooting]()
+- [Troubleshooting](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#troubleshooting)
 
 Setup
 -----
