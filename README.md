@@ -3,6 +3,17 @@ A  Boiler Plate for Test Driven Developement using LESS Bootstrap
 
 Impressed & Inspired by a lot of scaffolding templates, I have come up with my own framwork, with some custom settings. 
 
+Table of Contents
+-----------------
+[Setup](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#setup)
+-------
+[Development & Build](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#development--build) 
+---------------------
+[Grunt & Its powers] (https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-all-can-grunt-do)
+-------------------
+
+[What all is packed into this framework](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-does-this-package-have-)
+---------------------------------------
 Setup
 -----
 - Install Node from [here](http://nodejs.org/)
