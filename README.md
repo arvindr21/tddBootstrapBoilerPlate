@@ -27,7 +27,6 @@ Grunt Tasks
 - [grunt-rev](https://github.com/cbas/grunt-rev/blob/master/README.md) : Static file asset revisioning through content hashing
 - [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer/blob/master/README.md) : Autoprefixer parses CSS and adds vendor-prefixed CSS properties using the Can I Use database.
 - [grunt-usemin](https://github.com/yeoman/grunt-usemin/blob/master/README.md) : Replaces references to non-optimized scripts or stylesheets into a set of HTML files (or any templates/views).
-- [grunt-modernizr](https://github.com/Modernizr/grunt-modernizr/blob/master/README.md) : Sifts through your project files, gathers up your references to Modernizr tests and outputs a lean, mean Modernizr machine.
 - [grunt-newer](https://github.com/tschaub/grunt-newer/blob/master/README.md) : Configure Grunt tasks to run with newer files only. The newer task will configure another task to run with src files that are a) newer than the dest files or b) newer than the last successful run (if there are no dest files).
 - [grunt-svgmin](https://github.com/sindresorhus/grunt-svgmin/blob/master/readme.md) : Minify SVG using SVGO
 - [grunt-concurrent](https://github.com/sindresorhus/grunt-concurrent/blob/master/readme.md) : Run grunt tasks concurrently
@@ -38,6 +37,13 @@ Grunt Tasks
 AMD
 - [requirejs](http://requirejs.org/) : A JavaScript file and module loader
 - [karma-requirejs](http://karma-runner.github.io/0.8/plus/RequireJS.html) : Requirejs for Karma
+
+LESS Driven Bootstrap
+- [Bootstrap](https://github.com/twbs/bootstrap/blob/master/README.md) : A RWD Framework
+- [Jquery](https://github.com/jquery/jquery/blob/master/README.md) : A DOM Manipulation library
+
+Browser Detection Library
+- [grunt-modernizr](https://github.com/Modernizr/grunt-modernizr/blob/master/README.md) : Sifts through your project files, gathers up your references to Modernizr tests and outputs a lean, mean Modernizr machine.
 
 
 Testing Frameworks
