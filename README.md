@@ -1,15 +1,15 @@
 A  Boiler Plate for Test Driven Developement using LESS Bootstrap
-==================================
+=================================================================
 
-Impressed & Inspired by a lot of scaffolding templates, I have come with my own with some custom settings. 
+Impressed & Inspired by a lot of scaffolding templates, I have come up with my own framwork, with some custom settings. 
 
 Setup
 -----
 - Install Node from [here](http://nodejs.org/)
-- Open a command window and run ```npm -v``` to validate the install
-- Install git from [here](http://git-scm.com/downloads). Needed to fetch packages [using Bower]
-- Verify the same by right clicking any folder and able to see the git commands (git bash, git ui, etc..)
-- Install Bower ```npm install bower -g``` the flag ```-g``` is for the package to available globally
+- Open a command window and run `npm -v` to validate the install
+- Install git from [here](http://git-scm.com/downloads). [Needed to fetch packages using Bower]
+- Verify the same by right clicking on any folder and you should be able to see the git commands (git bash, git ui, etc..)
+- Install Bower `npm install bower -g` the flag `-g` is for the package to available globally
 - Verify the same by running ```bower -v```
 - Create a new folder and name it `boilerplate`
 - Right click inside the folder and open `gitbash`
@@ -32,7 +32,7 @@ Lets Build the app and make it production ready (yes! production ready)
 
 But.. but.. It looks the same as my dev? whats the difference you ask? 
 - Right click on the `dist/index.html` page in your browser and "View Source". -- What!! yes, your html is minified! 
-- And so are your js/css files. Theya re-bundled and minified 
+- And so are your js/css files. They are bundled and minified 
 
 JS
 
@@ -45,7 +45,7 @@ CSS
 
 - main.js
 
-With dependency management, autoprefixing & file hashing (for browser caching)!
+With jshint's code quality testing, dependency management, autoprefixing & file hashing (for browser caching)!
 - You can compare your `app/index.html` with `dist/index.html` and also their respective js and css.
 
 What all can Grunt do?
@@ -89,8 +89,10 @@ Lets make some changes and see what all can we do with Grunt + TDD + Jasmine
 - Jasmine says `Expected 'Hello world!' to equal 'Hello Jasmine & Grunt!'. (1)`
 - So how do we fix it? Lets navigate to `boilerplate\tddBootstrapBoilerPlate\app\scripts` and open `main.js`. Ahh! here is our source, which we are testing.
 - Lets change the return statement from `return 'Hello world!';` to `return 'Hello Jasmine & Grunt!';` and save our file. 
-- Grunt will detect the changes and will run all the test cases again and check. Since we have an integration with Karma as well, a couple of browsers will open and all the code will be tested. 
-You can scroll through the logs to see your tests pass.
+- Grunt will detect the changes and will run all the test cases again and check. Since we have an integration with Karma as well, a couple of browsers will open and all the code will be tested. You can scroll through the bash to see your tests pass. 
+- And also you will notice a new folder in your root directory named as `coverage`. This is the output of `jasmine-istanbul`. This will provide a detail info on how much of your source code is tested. You can open `boilerplate\tddBootstrapBoilerPlate\coverage\html` and launch `index.html` file and check. For now it should be 100%.  
+
+
 
 PS: you can update the grunt.js file as per your need.
 
