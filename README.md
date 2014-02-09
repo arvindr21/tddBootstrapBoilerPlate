@@ -24,10 +24,11 @@ Now lets see what all can be done with this setup
 - Open `boilerplate/tddBootstrapBoilerPlate/app` folder and launch `index.html`. You will find a sample bootstrap template loaded. Resize your browser, play around.
 - Lets Make a couple of changes to the file. Open `index.html` in your favorite text editor and look for the h1 tag with text "Bootstrap starter template" and change it to "Hello World!!" and p tag content after that to "This template is awesome!! "
 - Save and close the file. 
+- Refresh the browser and you should see the new changes reflecting.
 
 Lets Build the app and make it production ready (yes! production ready) 
-- Now back to GitBash. Naviagate to the root folder - `boilerplate/tddBootstrapBoilerPlate` and run ```grunt build```
-- This will run for around 30 secs to 1 min depending on the machine and will create a folder called `dist` in short for Distribution. Ignore any errors for now.
+- Now back to `gitbash`. Navigate to the root folder - `boilerplate/tddBootstrapBoilerPlate` and run `grunt build`
+- This will run for around 30 secs to 1 min depending on the machine and will create a folder called `dist` short for Distribution. Ignore any errors for now.
 - Now using file explorer go to `boilerplate/tddBootstrapBoilerPlate/dist` and launch `index.html`.
 
 But.. but.. It looks the same as my dev? whats the difference you ask? 
@@ -55,15 +56,15 @@ Handling LESS changes
 --------------------
 - Lets say that we are trying to build a custom theme for our application. So lets leverage the power of LESS by defining variables, mixins etc. 
 - Now for fun, lets change the background of the page. We will naviagate to ```boilerplate\tddBootstrapBoilerPlate\bower_components\bootstrap\less```
-- Find a file called `variables.less` and open in your favourite editor. 
+- Find a file called `variables.less` and open it in your favourite editor. 
 - Search for `@body-bg` and update the value from `#fff` to `#eee` a tinge of gray.
 - Now wat? Now, we build all the bootstrap less files to build the `bootstrap.css` again.  
 - Okay, back to `gitbash` and to the root folder [from now on the root folder is `boilerplate\tddBootstrapBoilerPlate`] and run `grunt less`. Wait a few seconds and command prompts back. No errors cool! our css file is built. 
 - Awesome lets head back app/index.html and launch it. Wow! the background is no more white! yay!
-- Now, to build after every single change is kind of boring.. so lets ask grunt to do that.
-- Oh!! can I do that?? Yes! ofcourse you can! Now back to `gitbash` and run `grunt watch`. You see a message "Running 'watch' task" 
-[The boilerplate has already been configured to watch for changes. You can check `Gruntfile.js` in the root folder for a whole bunch of config]
-- Lets go back to `variables.less` and lets change the top banner color from Black to say CadeBlue (#5F9EA0)? 
+- Now, to build after every single change is kind of boring.. so lets ask grunt to do that. Oh!! can I do that?? Yes! ofcourse you can! 
+- Now back to `gitbash` and run `grunt watch`. You see a message "Running 'watch' task" 
+[The boilerplate has already been configured to watch for changes. You can check `Gruntfile.js` in the root folder for a whole bunch of configs]
+- Lets go back to `variables.less` and lets change the top banner color from Black to say CadetBlue (#5F9EA0)? 
 - Search for `@navbar-inverse-bg` and replace the value from `#222` to `#5F9EA0`, save the file and hurry back to the bash.
 - You can see a message `File "bower_components\bootstrap\less\variables.less" changed.` and grunt will invoke the `less` task to rebuild our files. 
 - Back to app/index.html and refresh. Bam!! our header is changed! 
@@ -75,11 +76,11 @@ Running test cases
 In a Test Driven Development environment, executing test cases manually again and again is a painful & boring. So lets see how we can leverage Grunt for this.
 
 Our mantra here
----------------
-Write Test Case --> See the Fail --> Fix it --> See it pass --> Refactor the code to avoid duplicates
+
+`Write s Test Case --> Watch it Fail --> Fix it --> Watch it pass --> Refactor the code`
 
 - Back to `gitbash`, lets run `grunt jasmine`. Jasmine is our unit testing framework.
-- You will see a few lines roll by and you will see a green tick and 'says hello'. This is a sample test case, that comes out of box with this framework. Neat right? 
+- You will see a few lines roll by and you will see a green tick and `says hello`. This is a sample test case, that comes out of box with this framework. Neat right? 
 
 Lets make some changes and see what all can we do with Grunt + TDD + Jasmine
 - Back to `gitbash` run `grunt watch`, let grunt watch for our changes and run test cases. 
@@ -87,16 +88,26 @@ Lets make some changes and see what all can we do with Grunt + TDD + Jasmine
 - For a quick intro, we will replace `expect(helloWorld()).toEqual("Hello world!");` to `expect(helloWorld()).toEqual("Hello Jasmine & Grunt!");` save and file and run back to `gitbash`
 - You will see that grunt has detected changes to our file, and since it is a spec file and not a less file, it ran jasmine to validate our changes. But! our test case failed. 
 - Jasmine says `Expected 'Hello world!' to equal 'Hello Jasmine & Grunt!'. (1)`
-- So how do we fix it? Lets navigate to `boilerplate\tddBootstrapBoilerPlate\app\scripts` and open `main.js`. Ahh! here is our source, which we are testing.
+- So how do we fix it? Lets navigate to `boilerplate\tddBootstrapBoilerPlate\app\scripts` and open `main.js`. Ahh! here is our source which we are testing.
 - Lets change the return statement from `return 'Hello world!';` to `return 'Hello Jasmine & Grunt!';` and save our file. 
-- Grunt will detect the changes and will run all the test cases again and check. Since we have an integration with Karma as well, a couple of browsers will open and all the code will be tested. You can scroll through the bash to see your tests pass. 
+- Grunt will detect the changes and will run all the test cases again and check. Since we have an integration with Karma as well, a couple of browsers will open and all the code will be tested. You can scroll through the bash to see your test pass. 
 - And also you will notice a new folder in your root directory named as `coverage`. This is the output of `jasmine-istanbul`. This will provide a detail info on how much of your source code is tested. You can open `boilerplate\tddBootstrapBoilerPlate\coverage\html` and launch `index.html` file and check. For now it should be 100%.  
 
+Cool right? A framework with practically everything {Integrated & working together} ! 
+
+Customizing Grunt for your needs
+--------------------------------
+Now we are ready to open up the `Gruntfile.js`
+- To get started, come to the very end of the file, you will see a few `grunt.registerTask()`. This is where we config all our tasks like `build, test, less etc..`. You can configure your own ones too and name them whatever you want! Yes whatever!!
+- Lets add a new custom task 
+- After the `default` task, add the following piece of code `grunt.registerTask('fixVendor', ['autoprefixer']);` Now back to `gitbash`, and run `grunt fixVendor`. 
+- So what does this task do? `It parses CSS and adds vendor-prefixed CSS properties using the Can I Use database`. Now no more hassle of writting the same `background-image` 5 times one for each browser! Sweet huh?
+
+In this way, you can customize your own tasks to increase your laziness! Well, not exactly but you can focus better on the actual business logic! And emphasise on TDD!
 
 
-PS: you can update the grunt.js file as per your need.
-
-And as we already have seen Grunt does our building too! 
+Appendix
+========
 
 What does this package have? 
 ----------------------------
