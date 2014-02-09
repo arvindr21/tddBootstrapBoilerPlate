@@ -3,6 +3,38 @@ A  Boiler Plate for Test Driven Developement using LESS Bootstrap
 
 Impressed by a lot of scaffolding templates, I have come with my own with some custom settings. 
 
+Setup
+-----
+- Install Node from [here](http://nodejs.org/)
+- Open a command window and run ```npm -v``` to validate the install
+- Install git from [here](http://git-scm.com/downloads). Needed to fetch packages [using Bower]
+- Verify the same by right clicking any folder and able to see the git commands (git bash, git ui, etc..)
+- Install Bower ```npm install bower -g``` the flag ```-g``` is for the package to available globally
+- Verify the same by running ```bower -v```
+- Create a new folder and name it 'boilerplate'
+- Right click inside the folder and open 'git bash'
+- Then execute ```git clone git@github.com:arvindr21/tddBootstrapBoilerPlate.git```
+- Once the clone is completed, you will have the base files that we need to work on top of.
+- Using gitbash, navigate inside 'boilerplate' folder and execute ```npm install && bower install```
+- Wait for a couple of mins, and Bam!! all the files needed to run the app downloaded for you. Neat  right?
+
+Development & Build
+-------------------
+Now lets see what all can be done with this setup
+- Open boilerplate/app folder and launch index.html. You will find a sample bootstrap template loaded. Resize, play around.
+- Lets Make a couple of changes to the file. Open index.html in your favorite text editor and look for the h1 tag with text "Bootstrap starter template" and change it to "Hello World!!" and p tag content after that to "This template is sweet! "
+- Save and close the file. 
+
+Lets Build the app and make it production ready (yes! production ready) 
+- Now back to GitBash. Open/Naviagate the bash to the root folder - 'boilerplate' and run ```grunt build```
+- This will run for around 30 secs to 1 min depending on the machine and will create a folder called 'dist' in short for Distribution. Ignore any errors for now.
+- Now using file explorer go to boilerplate/dist and launch index.html.
+
+But.. but.. It looks the same as my dev? whats the difference you ask? 
+- Right click on the dist/index.html page in your browser and "View Source". -- What!! yes, your html is minified! 
+- And so are your js/css files. Theya re bundled and minified 
+
+
 What does this package have? 
 ----------------------------
 Package Management
