@@ -1,7 +1,7 @@
 A  Boiler Plate for Test Driven Developement using LESS Bootstrap
 ==================================
 
-Impressed by a lot of scaffolding templates, I have come with my own with some custom settings. 
+Impressed & Inspired by a lot of scaffolding templates, I have come with my own with some custom settings. 
 
 Setup
 -----
@@ -11,29 +11,67 @@ Setup
 - Verify the same by right clicking any folder and able to see the git commands (git bash, git ui, etc..)
 - Install Bower ```npm install bower -g``` the flag ```-g``` is for the package to available globally
 - Verify the same by running ```bower -v```
-- Create a new folder and name it 'boilerplate'
-- Right click inside the folder and open 'git bash'
+- Create a new folder and name it `boilerplate`
+- Right click inside the folder and open `gitbash`
 - Then execute ```git clone git@github.com:arvindr21/tddBootstrapBoilerPlate.git```
 - Once the clone is completed, you will have the base files that we need to work on top of.
-- Using gitbash, navigate inside 'boilerplate' folder and execute ```npm install && bower install```
-- Wait for a couple of mins, and Bam!! all the files needed to run the app downloaded for you. Neat  right?
+- Using gitbash, navigate inside `boilerplate/tddBootstrapBoilerPlate` folder and execute ```npm install && bower install```
+- Wait for a couple of mins, and Bam!! all the files needed to run the app are downloaded for you. Neat  right?
 
 Development & Build
 -------------------
 Now lets see what all can be done with this setup
-- Open boilerplate/app folder and launch index.html. You will find a sample bootstrap template loaded. Resize, play around.
-- Lets Make a couple of changes to the file. Open index.html in your favorite text editor and look for the h1 tag with text "Bootstrap starter template" and change it to "Hello World!!" and p tag content after that to "This template is sweet! "
+- Open `boilerplate/tddBootstrapBoilerPlate/app` folder and launch `index.html`. You will find a sample bootstrap template loaded. Resize your browser, play around.
+- Lets Make a couple of changes to the file. Open `index.html` in your favorite text editor and look for the h1 tag with text "Bootstrap starter template" and change it to "Hello World!!" and p tag content after that to "This template is awesome!! "
 - Save and close the file. 
 
 Lets Build the app and make it production ready (yes! production ready) 
-- Now back to GitBash. Open/Naviagate the bash to the root folder - 'boilerplate' and run ```grunt build```
-- This will run for around 30 secs to 1 min depending on the machine and will create a folder called 'dist' in short for Distribution. Ignore any errors for now.
-- Now using file explorer go to boilerplate/dist and launch index.html.
+- Now back to GitBash. Naviagate to the root folder - `boilerplate/tddBootstrapBoilerPlate` and run ```grunt build```
+- This will run for around 30 secs to 1 min depending on the machine and will create a folder called `dist` in short for Distribution. Ignore any errors for now.
+- Now using file explorer go to `boilerplate/tddBootstrapBoilerPlate/dist` and launch `index.html`.
 
 But.. but.. It looks the same as my dev? whats the difference you ask? 
-- Right click on the dist/index.html page in your browser and "View Source". -- What!! yes, your html is minified! 
-- And so are your js/css files. Theya re bundled and minified 
+- Right click on the `dist/index.html` page in your browser and "View Source". -- What!! yes, your html is minified! 
+- And so are your js/css files. Theya re-bundled and minified 
 
+JS
+
+- modernizr.js
+- vendor.js
+- plugins.js
+- main.js
+
+CSS
+
+- main.js
+
+With dependency management, autoprefixing & file hashing (for browser caching)!
+- You can compare your `app/index.html` with `dist/index.html` and also their respective js and css.
+
+What all can Grunt do?
+======================
+Grunt is a very powerful task runner that will do what you say (& do mind your tone.. Grunt is pretty serious). 
+Part 1
+------
+- Lets say that we are trying to build a custom theme for our application. So lets leverage the power of LESS by defining variables, mixins etc. 
+- Now for fun, lets change the background of the page. We will naviagate to ```boilerplate\tddBootstrapBoilerPlate\bower_components\bootstrap\less```
+- Find a file called `variables.less` and open in your favourite editor. 
+- Search for `@body-bg` and update the value from `#fff` to `#eee` a tinge of gray.
+- Now wat? Now, we build all the bootstrap less files to build the `bootstrap.css` again.  
+- Okay, back to `gitbash` and to the root folder [from now on the root folder is `boilerplate\tddBootstrapBoilerPlate`] and run `grunt less`. Wait a few seconds and command prompts back. No errors cool! our css file is built. 
+- Awesome lets head back app/index.html and launch it. Wow! the background is no more white! yay!
+- Now, to build after every single change is kind of boring.. so lets ask grunt to do that.
+- Oh!! can I do that?? Yes! ofcourse you can! Now back to `gitbash` and run `grunt watch`. You see a message "Running 'watch' task" 
+[The boilerplate has already been configured to watch for changes. You can check `Gruntfile.js` in the root folder for a whole bunch of config]
+- Lets go back to `variables.less` and lets change the top banner color from Black to say CadeBlue (#5F9EA0)? 
+- Search for `@navbar-inverse-bg` and replace the value from `#222` to `#5F9EA0`, save the file and hurry back to the bash.
+- You can see a message `File "bower_components\bootstrap\less\variables.less" changed.` and grunt will invoke the `less` task to rebuild our files. 
+- Back to app/index.html and refresh. Bam!! our header is changed! 
+You can play around to get a hang of both grunt and less. 
+Once done press `ctrl + c` to stop the watch.
+
+Part 2
+------
 
 What does this package have? 
 ----------------------------
