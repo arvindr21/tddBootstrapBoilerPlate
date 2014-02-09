@@ -199,15 +199,15 @@ With such a complex framework, a lot of things can go wrong! There are a few iss
 
 For this, you need to append the following to your git config
 
-Open `gitbash` then `git config --global url.https://.insteadOf git://`
+Open `gitbash` then `git config --global url.https://.insteadOf git://`. Now you can try running `npm install && bower install`
 
  
-- A certain node package is not found even after `npm-install && bower install`
-I ran into this on Win7. Even though my node_modules had that package, grunt couldn't find it. Lets say that grunt complains `jasmine` is not present, So here is what I do
+- A certain node package is not found even after `npm install && bower install`
+I ran into this on Win7. Even though my node_modules had that package, grunt couldn't find it. Lets say that grunt complains `jasmine` is missing, So here is what I do
 
-`gitbash` and run  `npm install jasmine -g` notice the `-g` it means  install globally. So it shouldn't be an issue really.
+Open `gitbash` and run  `npm install jasmine -g` notice the `-g`, it means  install globally. 
 
-
+*************************************************************************************************************
 Thanks for reading! Do Suggest changes and add-ons.
 
 @arvindr21
