@@ -225,6 +225,11 @@ module.exports = function (grunt) {
                     cwd: '.tmp/styles/',
                     src: '{,*/}*.css',
                     dest: '.tmp/styles/'
+                },{
+                    expand: true,
+                    cwd: '<%= baseProject.app %>/styles/',
+                    src: '{,*/}*.css',
+                    dest: '<%= baseProject.app %>/styles/'
                 }]
             }
         },
