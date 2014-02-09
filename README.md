@@ -5,15 +5,12 @@ Impressed & Inspired by a lot of scaffolding templates, I have come up with my o
 
 Table of Contents
 -----------------
-[Setup](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#setup)
--------
-[Development & Build](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#development--build) 
----------------------
-[Grunt & Its powers] (https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-all-can-grunt-do)
--------------------
+- [Setup](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#setup)
+- [Development & Build](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#development--build)
+- [Grunt & Its powers] (https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-all-can-grunt-do)
+- [What all is packed into this framework](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-does-this-package-have-)
+- [Troubleshooting]()
 
-[What all is packed into this framework](https://github.com/arvindr21/tddBootstrapBoilerPlate/blob/master/README.md#what-does-this-package-have-)
----------------------------------------
 Setup
 -----
 - Install Node from [here](http://nodejs.org/)
@@ -194,3 +191,26 @@ Mocha (Added as another option)
 
 Code coverage Framework
 - [grunt-template-jasmine-istanbul](https://github.com/maenu/grunt-template-jasmine-istanbul/blob/master/README.md) : Code coverage template mix-in for grunt-contrib-jasmine, using istanbul
+
+Troubleshooting
+---------------
+With such a complex framework, a lot of things can go wrong! There are a few issues I have encountered and fixed myself. They are listed below
+- `npm install && bower install` won't run! Some error about github and proxy & firewall 
+
+For this, you need to append the following to your git config
+
+Open `gitbash` then `git config --global url.https://.insteadOf git://`
+
+ 
+- A certain node package is not found even after `npm-install && bower install`
+I ran into this on Win7. Even though my node_modules had that package, grunt couldn't find it. Lets say that grunt complains `jasmine` is not present, So here is what I do
+
+`gitbash` and run  `npm install jasmine -g` notice the `-g` it means  install globally. So it shouldn't be an issue really.
+
+
+Thanks for reading! Do Suggest changes and add-ons.
+
+@arvindr21
+
+
+
