@@ -85,7 +85,7 @@ module.exports = function (grunt) {
                     open: true,
                     base: [
                         '.tmp',
-                        '<%= baseProject.app %>'
+                        ''
                     ]
                 }
             },
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
                     base: [
                         '.tmp',
                         'test',
-                        '<%= baseProject.app %>'
+                        ''
                     ]
                 }
             },
